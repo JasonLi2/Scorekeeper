@@ -7,7 +7,7 @@ const maxScoreSelect = document.querySelector("#scoreSelect");
 
 let scoreP1 = 0;
 let scoreP2 = 0;
-let maxScore = 5;
+let maxScore = 1;
 let gameOver = false;
 
 // Logic for increasing p1's score
