@@ -16,6 +16,9 @@ buttonP1.addEventListener("click", function ()  {
         scoreP1 += 1;
         if(scoreP1 === maxScore) {
             gameOver = true;
+            // changing color of text when p1 wins
+            trackerP1.classList.add("has-text-success");
+            trackerP2.classList.add("has-text-danger");
         }
         trackerP1.textContent = scoreP1;
     }
@@ -27,6 +30,9 @@ buttonP2.addEventListener("click", function ()  {
         scoreP2 += 1;
         if(scoreP2 === maxScore) {
             gameOver = true;
+            // changing color of text when p1 wins
+            trackerP2.classList.add("has-text-success");
+            trackerP1.classList.add("has-text-danger");
         }
         trackerP2.textContent = scoreP2;
     }
@@ -49,4 +55,10 @@ function reset() {
 
     trackerP1.textContent = scoreP1;
     trackerP2.textContent = scoreP2;
+
+    //removing color of score for p1 and p2
+    trackerP1.classList.remove("has-text-success");
+    trackerP1.classList.remove("has-text-danger");
+    trackerP2.classList.remove("has-text-success");
+    trackerP2.classList.remove("has-text-danger");
 }
