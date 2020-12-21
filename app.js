@@ -19,6 +19,9 @@ buttonP1.addEventListener("click", function ()  {
             // changing color of text when p1 wins
             trackerP1.classList.add("has-text-success");
             trackerP2.classList.add("has-text-danger");
+            //disabling increase score buttons
+            buttonP1.disabled = true;
+            buttonP2.disabled = true;
         }
         trackerP1.textContent = scoreP1;
     }
@@ -33,6 +36,9 @@ buttonP2.addEventListener("click", function ()  {
             // changing color of text when p1 wins
             trackerP2.classList.add("has-text-success");
             trackerP1.classList.add("has-text-danger");
+            //disabling increase score buttons
+            buttonP1.disabled = true;
+            buttonP2.disabled = true;
         }
         trackerP2.textContent = scoreP2;
     }
@@ -57,8 +63,10 @@ function reset() {
     trackerP2.textContent = scoreP2;
 
     //removing color of score for p1 and p2
-    trackerP1.classList.remove("has-text-success");
-    trackerP1.classList.remove("has-text-danger");
-    trackerP2.classList.remove("has-text-success");
-    trackerP2.classList.remove("has-text-danger");
+    trackerP1.classList.remove("has-text-success", "has-text-danger");
+    trackerP2.classList.remove("has-text-success", "has-text-danger");
+
+    //re-enable p1 and p2 buttons
+    buttonP1.disabled = false;
+    buttonP2.disabled = false;
 }
